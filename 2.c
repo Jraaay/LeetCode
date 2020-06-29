@@ -22,18 +22,10 @@ int main()
     struct ListNode* l1,* l2;
     l1 = (struct ListNode*)malloc(sizeof(struct ListNode));
     l2 = (struct ListNode*)malloc(sizeof(struct ListNode));
-    l1->val = 2;
-    l2->val = 5;
-    l1->next = (struct ListNode*)malloc(sizeof(struct ListNode));
-    l2->next = (struct ListNode*)malloc(sizeof(struct ListNode));
-    l1->next->val = 4;
-    l2->next->val = 6;
-    l1->next->next = (struct ListNode*)malloc(sizeof(struct ListNode));
-    l2->next->next = (struct ListNode*)malloc(sizeof(struct ListNode));
-    l1->next->next->val = 3;
-    l2->next->next->val = 4;
-    l1->next->next->next = 0;
-    l2->next->next->next = 0;
+    l1->val = 0;
+    l2->val = 0;
+    l1->next = 0;
+    l2->next = 0;
     struct ListNode* answer = addTwoNumbers(l1, l2);
     while(answer->next != 0)
     {
@@ -67,6 +59,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
     i = num1 + num2;
     struct ListNode* answer = (struct ListNode*)malloc(sizeof(struct ListNode));
     struct ListNode* writeAnswer = answer;
+    writeAnswer->val = 0;
     while(i != 0)
     {
         writeAnswer->val = i % 10;
