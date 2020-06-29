@@ -38,6 +38,7 @@ int main()
     while(answer->next != 0)
     {
         printf("%d",answer->val);
+        answer = answer->next;
     }
     printf("%d",answer->val);
     system("pause");
@@ -52,6 +53,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
     {
         num1 += l1->val * i;
         i *= 10;
+        l1 = l1->next;
     }
     num1 += l1->val * i;
     i = 1;
@@ -59,6 +61,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
     {
         num2 += l2->val * i;
         i *= 10;
+        l2 = l2->next;
     }
     num2 += l2->val * i;
     i = num1 + num2;
