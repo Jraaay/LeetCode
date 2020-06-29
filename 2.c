@@ -76,10 +76,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
             writeAnswer->next = (struct ListNode*)malloc(sizeof(struct ListNode));
             writeAnswer = writeAnswer->next;
         }
-        else
-        {
-            writeAnswer->next = 0;
-        }
     }
+    writeAnswer->next = 0;
     return answer;
 }
