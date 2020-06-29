@@ -6,7 +6,7 @@ int lengthOfLongestSubstring(char * s);
 
 int main()
 {
-    char s[] = "pwwkew";
+    char s[] = "abcabcbb";
     printf("%d",lengthOfLongestSubstring(s));
     system("pause");
     return 0;
@@ -27,6 +27,7 @@ int lengthOfLongestSubstring(char * s)
             }
             else
             {
+                i = j;
                 j = strlen(s);
             }
         }
