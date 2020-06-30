@@ -22,14 +22,18 @@ int rob(int *nums, int numsSize)
     else
     {
         int max = 0;
-        for (int i = 2; i < numsSize; i++)
+        for (int i = 1; i < numsSize; i++)
         {
             int money = rob(&nums[i], numsSize - i);
+            if (i > 1)
+            {
+                money += nums[0];
+            }
             if (money > max)
             {
                 max = money;
             }
         }
-        return max + nums[0];
+        return max;
     }
 }
