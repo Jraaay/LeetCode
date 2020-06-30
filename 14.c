@@ -29,6 +29,7 @@ char *longestCommonPrefix(char **strs, int strsSize)
                 pub[i] = 0;
             }
         }
+        pub[i] = 0;
     }
     return pub;
 }
