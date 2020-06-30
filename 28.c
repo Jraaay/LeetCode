@@ -2,7 +2,7 @@ int strStr(char * haystack, char * needle)
 {
     int len_hey = strlen(haystack);
     int len_needle = strlen(needle);
-    for (int i = 0; i < len_hey - len_needle; i++)
+    for (int i = 0; i < len_hey - len_needle + 1; i++)
     {
         int flag = 1;
         for (int j = 0; j < len_needle; j++)
@@ -16,6 +16,10 @@ int strStr(char * haystack, char * needle)
         {
             return i;
         }
+    }
+    if(len_needle == 0)
+    {
+        return 0;
     }
     return -1;
 }
