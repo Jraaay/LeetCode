@@ -14,27 +14,19 @@ int main()
 
 int lengthOfLongestSubstring(char * s)
 {
-    int countmax = 0;
-    for (int i = 0; i < strlen(s); i++)
+    int i, start = 0, count = 0, max = 0;
+    char letter[128] = {0};
+    for (i = 0; i < strlen(s); i++)
     {
-        int count = 0;
-        char letter[128] = {0};
-        for (int j = i; j < strlen(s); j++)
+        if (letter[s[i]] > start)
         {
-            if (letter[s[j]]++ == 0)
+            if (i - start > max)
             {
-                count++;
+                max = i - start;
             }
-            else
-            {
-                i = j;
-                j = strlen(s);
-            }
+            start = letter[s[i]];
         }
-        if (count > countmax)
-        {
-            countmax = count;
-        }
+        letter[s[i]] = i + 1;
     }
-    return countmax;
+    return max;
 }
