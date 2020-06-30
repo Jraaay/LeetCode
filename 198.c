@@ -1,6 +1,10 @@
-int rob(int* nums, int numsSize)
+int rob(int *nums, int numsSize)
 {
-    if (numsSize == 1)
+    if (numsSize == 0)
+    {
+        return 0;
+    }
+    else if (numsSize == 1)
     {
         return nums[0];
     }
