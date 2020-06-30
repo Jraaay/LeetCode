@@ -47,13 +47,21 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2)
             l2 = l2->next;
         }
     }
-    if (l1)
+    if (l1 && answer)
     {
         writeanswer->next = l1;
     }
-    else
+    else if (l2 && answer)
     {
         writeanswer->next = l2;
+    }
+    else if (l1)
+    {
+        answer = l1;
+    }
+    else
+    {
+        answer = l2;
     }
     return answer;
 }
