@@ -30,6 +30,10 @@ int main()
 
 struct ListNode *reverseList(struct ListNode *head)
 {
+    if (head == NULL)
+    {
+        return 0;
+    }
     struct ListNode *list[10000] = {0};
     int i = 0;
     while (head != NULL)
