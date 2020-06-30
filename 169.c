@@ -1,12 +1,10 @@
-int majorityElement(int* nums, int numsSize)
+int cmpfunc(const void *a, const void *b)
 {
-    int val[1000] = {0};
-    for (int i = 0; i < numsSize; i++)
-    {
-        if (++val[nums[i]] > numsSize/2)
-        {
-            return nums[i];
-        }
-    }
-    return -1;
+    return (*(int *)a - *(int *)b);
+}
+
+int majorityElement(int *nums, int numsSize)
+{
+    qsort(nums, numsSize, sizeof(int), cmpfunc);
+    return nums[numsSize / 2];
 }
