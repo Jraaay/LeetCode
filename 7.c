@@ -2,7 +2,7 @@ int reverse(int x){
     int inverse = 0;
     while (x)
     {
-        if (inverse > 214748365)
+        if (inverse >= 214748365 || inverse <= -214748365)
         {
             return 0;
         }
